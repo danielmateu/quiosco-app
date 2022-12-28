@@ -48,3 +48,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 - Prisma
 1. npx prisma studio (The studio command allows you to interact with and manage your data interactively. It does this by starting a local web server with a web app configured with your project's data schema and records.)
+
+
+##### Icons
+
+- Heroicons
