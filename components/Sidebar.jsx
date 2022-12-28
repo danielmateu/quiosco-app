@@ -10,10 +10,11 @@ export const Sidebar = () => {
     return (
         <>
             <Image
-                width={150}
-                height={100}
+                width={140}
+                height={140}
                 src='/assets/img/logo.svg' alt='imagen logo'
-                className="m-5" 
+                className="m-auto pt-6" 
+                priority={true}
             />
 
             <nav className="mt-10">
