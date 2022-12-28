@@ -12,9 +12,9 @@ export default function Home({ categorias }) {
 
   return (
     <Layout pagina={`Menú ${categoriaActual?.nombre}`}>
-      <h1 className="text-2xl ">{categoriaActual?.nombre}</h1>
+      <h1 className="text-4xl">{categoriaActual?.nombre}</h1>
 
-      <p className="mt-5">Elige tu pedido 😊</p>
+      <p className="text-2xl my-5">Elige tu pedido <span className="hover:rotate-180">😊</span></p> 
 
       <div className="grid gap-4 xs:grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
         {categoriaActual?.productos?.map(producto => (

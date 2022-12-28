@@ -9,7 +9,7 @@ export const Producto = ({ producto }) => {
     const { nombre, imagen, precio } = producto;
 
     return (
-        <div className="border rounded-xl  m-2  hover:shadow-md transition-all bg-slate-50">
+        <div className="border rounded-xl  m-2  hover:shadow-md transition-all bg-slate-50 hover:rotate-[-6deg] ">
             <Image
                 src={`/assets/img/${imagen}.jpg`}
                 alt={`Imagen de ${producto.nombre}`}

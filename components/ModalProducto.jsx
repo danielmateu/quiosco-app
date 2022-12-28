@@ -2,6 +2,7 @@ import Image from "next/image"
 import { useEffect, useState } from "react";
 import { formatearDinero } from "../helpers";
 import useQuiosco from "../hooks/useQuiosco"
+import 'animate.css';
 
 
 export const ModalProducto = () => {
@@ -25,10 +26,10 @@ export const ModalProducto = () => {
     
     return (
 
-        <div className="md:flex gap-10">
+        <div className="md:flex gap-10 animate__animated animate__fadeIn">
             <div className="md:w-1/3">
                 <Image
-                    className="rounded-3xl"
+                    className="rounded-3xl "
                     width={300}
                     height={300}
                     alt={`Imagen de ${producto.nombre}`}
