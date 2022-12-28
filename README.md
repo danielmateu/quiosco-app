@@ -35,9 +35,9 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-### Instalaciones 
+### Installations  
 
-- Tailwindcss
+- Tailwind
 - Postcss
 - Autoprefixer
 - ts-node
@@ -45,3 +45,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 #### ORM
 
 - Prisma
+1. npx prisma studio (The studio command allows you to interact with and manage your data interactively. It does this by starting a local web server with a web app configured with your project's data schema and records.)
