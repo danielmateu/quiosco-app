@@ -8,7 +8,7 @@ export const Categoria = ({categoria}) => {
     const {nombre, icono, id} = categoria;
 
     return (
-        <div className={`${categoriaActual?.id === id ? 'bg-orange-200' : ''} flex gap-4 items-center m-2 p-4 w-max hover:bg-orange-200 rounded-xl transition-all`}>
+        <div className={`${categoriaActual?.id === id ? 'bg-orange-200 text-slate-500' : ''} flex gap-4 items-center m-2 p-4 w-max hover:bg-orange-200 rounded-xl transition-all`}>
             <Image
                 width={50}
                 height={50}

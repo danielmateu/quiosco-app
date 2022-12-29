@@ -13,7 +13,7 @@ const QuioscoProvider = ({ children }) => {
     const [producto, setProducto] = useState({})
     const [modal, setModal] = useState(false)
     const [pedido, setPedido] = useState([]);
-    const [paso, setPaso] = useState(1)
+
 
     const obtenerCategorias = async() => {
         const {data} = await axios('/api/categorias')
@@ -61,9 +61,6 @@ const QuioscoProvider = ({ children }) => {
 
     }
 
-    const handleChangePaso = paso => {
-        setPaso(paso)
-    }
 
     return (
 
@@ -78,8 +75,8 @@ const QuioscoProvider = ({ children }) => {
                 modal,
                 handleAgregarPedido,
                 pedido,
-                handleChangePaso,
-                paso,
+                // handleChangePaso,
+                // paso,
             }}
         >
             {children}
