@@ -48,7 +48,7 @@ export const Pasos = () => {
             </div>
 
             <div className="bg-gray-100 mb-10">
-                <div className="rounded-full bg-orange-300 text-xs leading-none h-2 text-center text-slate-400 transition-all" style={{width: `${calcularProgreso()}%`}}></div>
+                <div className="rounded-full bg-orange-300 text-xs leading-none h-2" style={{width: `${calcularProgreso()}%`}}></div>
             </div>
         </>
     )
