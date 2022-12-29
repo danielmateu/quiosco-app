@@ -44,11 +44,14 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - axios
 - react-modal
 - react-toastify
+- useSWR (Para consulta de api)
 
 #### ORM
 
 - Prisma
 1. npx prisma studio (The studio command allows you to interact with and manage your data interactively. It does this by starting a local web server with a web app configured with your project's data schema and records.)
+
+2. npx prisma migrate dev(To create a new migration)
 
 
 ##### Icons
