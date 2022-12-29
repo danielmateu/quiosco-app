@@ -3,6 +3,20 @@ import { formatearDinero } from "../helpers";
 import useQuiosco from "../hooks/useQuiosco";
 import { Layout } from "../layout/Layout"
 
+// import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+// const customStyles = {
+//     content: {
+//         top: '50%',
+//         left: '50%',
+//         right: 'auto',
+//         bottom: 'auto',
+//         marginRight: '-50%',
+//         transform: 'translate(-50%, -50%)',
+//     },
+// };
+
 
 const Total = () => {
 
@@ -22,6 +36,7 @@ const Total = () => {
     return (
         <Layout
             pagina='Datos y Total'
+            // style={customStyles}
         >
             <h1 className="text-4xl">Total y confirmar pedido</h1>
             <p className="text-2xl my-4">Confirma tu pedido a continuación</p>
@@ -51,6 +66,7 @@ const Total = () => {
                     />
                 </div>
             </form>
+            {/* <ToastContainer/> */}
 
         </Layout>
     )

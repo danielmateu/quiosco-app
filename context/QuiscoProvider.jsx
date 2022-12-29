@@ -3,9 +3,6 @@ import { useRouter } from 'next/router';
 import { createContext, useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
 
-
-
-
 const QuioscoContext = createContext();
 
 const QuioscoProvider = ({ children }) => {
@@ -21,8 +18,8 @@ const QuioscoProvider = ({ children }) => {
     const router = useRouter()
 
 
-    const obtenerCategorias = async() => {
-        const {data} = await axios('/api/categorias')
+    const obtenerCategorias = async () => {
+        const { data } = await axios('/api/categorias')
         setCategorias(data);
     }
 
@@ -38,7 +35,7 @@ const QuioscoProvider = ({ children }) => {
         const nuevoTotal = pedido.reduce((total, producto) => (producto.precio * producto.cantidad) + total, 0);
         setTotal(nuevoTotal)
     }, [pedido])
-    
+
 
     const handleClickCategoria = id => {
         const categoria = categorias.filter(cat => cat.id === id);
@@ -54,16 +51,16 @@ const QuioscoProvider = ({ children }) => {
         setModal(!modal);
     }
 
-    const handleAgregarPedido = ({categoriaId, ...producto}) => {
+    const handleAgregarPedido = ({ categoriaId, ...producto }) => {
 
-        if(pedido.some(productoState => productoState.id === producto.id)){
+        if (pedido.some(productoState => productoState.id === producto.id)) {
             //Actualizar la cantidad
-            const pedidoActualizado = pedido.map(productoState => productoState.id === producto.id ? producto : productoState )
+            const pedidoActualizado = pedido.map(productoState => productoState.id === producto.id ? producto : productoState)
 
             setPedido(pedidoActualizado);
             toast.success('Guardado correctamente')
-            
-        }else{
+
+        } else {
             setPedido([...pedido, producto]);
             toast.success('Agregado al pedido')
         }
@@ -83,19 +80,28 @@ const QuioscoProvider = ({ children }) => {
         setPedido(pedidoActualizado);
     }
 
-    const colocarOrden = async(e) => {
+    const colocarOrden = async (e) => {
         e.preventDefault();
 
         try {
-            const {data} = await axios.post('/api/ordenes', {pedido, nombre, total, fecha: Date.now().toString()});
-            console.log(data);
+            await axios.post('/api/ordenes', { pedido, nombre, total, fecha: Date.now().toString() });
+
+            //Resetear la app
+            setCategoriaActual(categorias[0]);
+            setPedido([]);
+            setNombre('');
+            setTotal(0);
+
+            toast.success('Pedido realizado')
+
+            setTimeout(() => {
+                router.push('/')
+            },4000)
+
         } catch (error) {
             console.log(error)
         }
 
-        console.log(pedido);
-        console.log(nombre);
-        console.log(total);
     }
 
     return (
